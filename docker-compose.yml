@@ -12,7 +12,7 @@ services:
     environment:
       POSTGRES_HOST: database
       REDIS_HOST: broker
-      CELERY_CONFIG_MODULE: random_coffee.celeryconfig
+      CELERY_CONFIG_MODULE: messier.celeryconfig
     depends_on:
       - database
       - broker
@@ -44,7 +44,7 @@ services:
     command: celery worker
     environment:
       REDIS_HOST: broker
-      CELERY_CONFIG_MODULE: random_coffee.celeryconfig
+      CELERY_CONFIG_MODULE: messier.celeryconfig
     depends_on:
       - broker
 volumes:
