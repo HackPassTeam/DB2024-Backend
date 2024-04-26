@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "random_coffee"
+name = "messier"
 version = "0.0.1"
 dependencies = [
     "fastapi~=0.103.0",
@@ -44,5 +44,5 @@ migrations = [
 
 
 [project.scripts]
-random-coffee-api = "random_coffee.main.api:main"
-random-coffee-telegram = "random_coffee.main.telegram:main"
+random-coffee-api = "messier.main.api:main"
+random-coffee-telegram = "messier.main.telegram:main"

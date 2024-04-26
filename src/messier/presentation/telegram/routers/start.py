@@ -1,0 +1,36 @@
+from aiogram import Router, types
+from aiogram.filters import CommandStart
+
+from messier.application.common.dto import PersonDTO
+from messier.infrastructure.aiogram.state_filter import (
+    AuthenticationStateFilter,
+)
+from messier.presentation.telegram.states import AuthenticationState
+
+
+router = Router()
+
+
+@router.message(
+    AuthenticationStateFilter(AuthenticationState.not_authenticated),
+    CommandStart(),
+)
+async def start_command_handler(
+        message: types.Message,
+        person: PersonDTO,
+):
+    await message.answer(
+        "Приветсвую тебя, путник!"
+    )
+
+
+@router.message(
+    AuthenticationStateFilter(AuthenticationState.authenticated),
+    CommandStart(),
+)
+async def start_command_handler(
+        message: types.Message,
+):
+    await message.answer(
+        "Приветсвую тебя, путник! Где-то я тебя уже видел..."
+    )
