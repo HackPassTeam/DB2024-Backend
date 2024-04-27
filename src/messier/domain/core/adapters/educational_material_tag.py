@@ -40,9 +40,11 @@ class AllEducationalMaterialTag(BaseEntityRepo[EducationalMaterialTag]):
             stmt = stmt.join(EducationalMaterial.tags).where(Tag.id.in_(tags))
 
         if text:
-            stmt = stmt.where(or_(
-                EducationalMaterial.name.ilike(f'%{text}%'),
-                EducationalMaterial.description.ilike(f'%{text}%'))
+            stmt = stmt.where(
+                or_(
+                    EducationalMaterial.name.ilike(f'%{text}%'),
+                    EducationalMaterial.description.ilike(f'%{text}%')
+                )
             )
 
         res = await self.session.scalars(stmt)
