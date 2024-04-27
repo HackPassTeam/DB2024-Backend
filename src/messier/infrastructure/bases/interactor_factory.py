@@ -1,14 +1,14 @@
 from __future__ import annotations
-from typing import ClassVar, TypeVar, Callable, ParamSpec, Generic, AsyncContextManager, Optional
-from functools import wraps
+
 from contextlib import asynccontextmanager
+from functools import wraps
+from typing import ClassVar, TypeVar, Callable, ParamSpec, Generic, AsyncContextManager, Optional
 
 from di import Container, SolvedDependent, ScopeState
 from di.dependent import Dependent
 from di.executors import AsyncExecutor
 
 from messier.infrastructure.config import Environment, environment
-
 
 _RT = TypeVar("_RT")
 _P = ParamSpec("_P")

@@ -1,8 +1,7 @@
 from typing import Optional
 
-from pydantic_settings import BaseSettings
-
 import dotenv
+from pydantic_settings import BaseSettings
 
 
 class Environment(BaseSettings):

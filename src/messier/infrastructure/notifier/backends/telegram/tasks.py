@@ -3,16 +3,14 @@ import logging
 from typing import Iterable
 
 import celery
-import celery.result
 import celery.exceptions
+import celery.result
+from aiogram import Bot, exceptions, types
 from celery import shared_task, group
 
+from messier.infrastructure.config import environment
 from messier.infrastructure.dto import BaseDTO
 from messier.infrastructure.exceptions.notifier import NotifierBackendError
-from aiogram import Bot, exceptions, types
-
-from messier.infrastructure.config import environment
-
 
 logger = logging.getLogger(__name__)
 

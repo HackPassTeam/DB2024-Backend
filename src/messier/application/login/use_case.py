@@ -1,8 +1,6 @@
+from messier.application.login.dto import LoginDTO, LoginResponseDTO
 from messier.domain.core.adapters import AllPersons
 from messier.domain.core.services import AuthenticationService
-
-from messier.application.login.dto import LoginDTO, LoginResponseDTO
-
 from messier.infrastructure.bases.use_case import UseCase
 from messier.infrastructure.security.token import create_access_token, CreateTokenData, Sub
 

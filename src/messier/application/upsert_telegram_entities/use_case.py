@@ -1,10 +1,8 @@
-from messier.infrastructure.bases.use_case import UseCase
-
 from messier.domain.core.services import (
     AuthenticationService,
     IdentificationService,
 )
-
+from messier.infrastructure.bases.use_case import UseCase
 from .dto import UpsertTelegramEntitiesDTO, UpsertTelegramEntitiesResponseDTO
 from ...domain.core.adapters.person import AllPersons
 from ...domain.telegram.services import DatabaseSyncService

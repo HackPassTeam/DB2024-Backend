@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from typing import Optional, TYPE_CHECKING
 from datetime import datetime
+from typing import Optional, TYPE_CHECKING
 
 from sqlalchemy.orm import mapped_column, Mapped, relationship
 

@@ -1,11 +1,10 @@
+from datetime import datetime
 from typing import Optional
 from uuid import UUID, uuid4
-from datetime import datetime
 
 from sqlalchemy.orm import Mapped, mapped_column
 
 from messier.infrastructure.relational_entity import BaseRelationalEntity
-
 
 UTMId = UUID
 

@@ -7,12 +7,11 @@ from di.dependent import Injectable
 from sqlalchemy import select, func, delete
 from sqlalchemy.sql.base import ExecutableOption
 
+from messier.infrastructure.database import DatabaseSession
 from messier.infrastructure.relational_entity import (
     BaseRelationalObject,
     BaseRelationalEntity,
 )
-from messier.infrastructure.database import DatabaseSession
-
 
 RelationalObjectT = TypeVar("RelationalObjectT", bound=BaseRelationalObject)
 RelationalEntityT = TypeVar("RelationalEntityT", bound=BaseRelationalEntity)

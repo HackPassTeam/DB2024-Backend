@@ -3,7 +3,6 @@ from aiogram.filters import ExceptionTypeFilter
 
 from messier.presentation.telegram.errors.auth import AccountNotIdentifiedError
 
-
 router = Router()
 
 

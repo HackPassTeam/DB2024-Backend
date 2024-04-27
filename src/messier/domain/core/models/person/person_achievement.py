@@ -1,10 +1,9 @@
 from datetime import datetime
 
-from sqlalchemy import ForeignKey, VARCHAR
+from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from messier.infrastructure.relational_entity import BaseRelationalEntity
-
 from .achievement import Achievement
 
 

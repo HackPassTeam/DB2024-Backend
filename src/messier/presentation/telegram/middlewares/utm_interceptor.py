@@ -1,14 +1,14 @@
 from typing import Callable, Dict, Any, Awaitable
+from uuid import UUID
 
 from aiogram import BaseMiddleware
 from aiogram.types import TelegramObject
-from uuid import UUID
 
-from messier.infrastructure.uuid import is_valid_uuid
 from messier.application.read_utm import (
     ReadUTMDTO,
 )
 from messier.domain.core import exceptions
+from messier.infrastructure.uuid import is_valid_uuid
 from messier.presentation.interactor_factory.core import CoreInteractorFactory
 
 

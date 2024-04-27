@@ -1,14 +1,12 @@
-from typing import Optional
-
 from datetime import datetime
+from typing import Optional
 
 from sqlalchemy import ForeignKey, Enum
 from sqlalchemy.orm import mapped_column, Mapped, relationship
 
+from messier.domain.core.models.person.person import Person
 from messier.infrastructure.notifier.interface import NotifierBackendEnum
 from messier.infrastructure.relational_entity import BaseRelationalEntity
-
-from messier.domain.core.models.person.person import Person
 
 
 class NotificationDestinationRelPerson(BaseRelationalEntity):

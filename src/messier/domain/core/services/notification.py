@@ -3,16 +3,11 @@ from typing import Literal
 from messier.domain.core.adapters.notification_destination import \
     AllNotificationDestinations
 from messier.domain.core.adapters.person import AllPersons
-from messier.infrastructure.notifier import Notifier
-from messier.infrastructure.security.scopes import AccessScopeEnum
-
 from messier.domain.core.exceptions.notification import (
-    PersonHasNoNotificationDestinations,
-    NotificationError,
-    CantReportInternalError
+    PersonHasNoNotificationDestinations
 )
-
 from messier.infrastructure.bases.service import BaseService
+from messier.infrastructure.notifier import Notifier
 
 
 class NotificationService(BaseService):

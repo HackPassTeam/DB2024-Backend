@@ -2,13 +2,13 @@ from typing import Callable, Dict, Any, Awaitable, cast
 
 from aiogram import BaseMiddleware
 from aiogram.dispatcher import flags
-from aiogram.types import TelegramObject
-from aiogram.fsm.context import FSMContext
 from aiogram.dispatcher.event.event import HandlerObject
+from aiogram.fsm.context import FSMContext
+from aiogram.types import TelegramObject
 
-from messier.domain.core.exceptions.authorization import AuthorizationError
-from messier.application.authorize import AuthorizeDTO
 from messier.application.attach_person_to_telegram_account import AttachPersonToTelegramAccountDTO
+from messier.application.authorize import AuthorizeDTO
+from messier.domain.core.exceptions.authorization import AuthorizationError
 from messier.presentation.interactor_factory import (
     CoreInteractorFactory,
     TelegramInteractorFactory,

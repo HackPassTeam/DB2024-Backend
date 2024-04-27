@@ -44,5 +44,5 @@ migrations = [
 
 
 [project.scripts]
-random-coffee-api = "messier.main.api:main"
-random-coffee-telegram = "messier.main.telegram:main"
+messier-api = "messier.main.api:main"
+messier-telegram = "messier.main.telegram:main"

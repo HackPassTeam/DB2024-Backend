@@ -4,7 +4,6 @@ from fastapi import APIRouter
 
 from messier import application
 from messier.domain.core import exceptions
-
 from messier.presentation.api import schemas
 from messier.presentation.api.dependencies.ioc import CoreIoCDep
 

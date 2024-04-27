@@ -7,7 +7,7 @@ from messier.application.edit_person import EditPersonDTO, \
     EditPersonResponseDTO
 from messier.application.get_my_achievements import \
     GetMyAchievementsResponseDTO, GetMyAchievementsDTO
-from messier.presentation.api import schemas, dependencies
+from messier.presentation.api import dependencies
 from messier.presentation.api.dependencies.ioc import CoreIoCDep
 
 router = APIRouter(tags=['Me'])

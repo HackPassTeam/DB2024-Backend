@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from messier.domain.core.models.utm import UTMId
 from messier.application.common.dto import UTMDTO
+from messier.domain.core.models.utm import UTMId
 
 
 @dataclass

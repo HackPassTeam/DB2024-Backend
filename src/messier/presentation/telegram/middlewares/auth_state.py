@@ -1,8 +1,8 @@
 from typing import Callable, Dict, Any, Awaitable, cast
 
 from aiogram import Bot
-from aiogram.types import TelegramObject
 from aiogram.fsm.middleware import FSMContextMiddleware
+from aiogram.types import TelegramObject
 
 from messier.presentation.telegram.states.authentication import (
     AuthenticationState

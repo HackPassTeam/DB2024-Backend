@@ -11,5 +11,8 @@ class Tag(BaseRelationalEntity):
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(VARCHAR(25))
-    color: Mapped[int] = mapped_column()
+    color: Mapped[str] = mapped_column()
     created_at: Mapped[datetime] = mapped_column(default=datetime.now)
+
+    def __repr__(self):
+        return self.name

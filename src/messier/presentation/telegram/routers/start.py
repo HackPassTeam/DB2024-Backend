@@ -7,7 +7,6 @@ from messier.infrastructure.aiogram.state_filter import (
 )
 from messier.presentation.telegram.states import AuthenticationState
 
-
 router = Router()
 
 

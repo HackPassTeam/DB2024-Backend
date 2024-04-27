@@ -1,14 +1,13 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
 from datetime import datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from messier.infrastructure.database import TelegramIdentifier
 from messier.infrastructure.relational_entity import BaseRelationalEntity
 from .chat_member import ChatMember
-
 
 if TYPE_CHECKING:
     from .telegramaccount import TelegramAccount

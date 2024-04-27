@@ -1,7 +1,7 @@
 from aiogram import types
 
-from messier.infrastructure.service import BaseService
 from messier.domain.telegram import models, repos
+from messier.infrastructure.service import BaseService
 
 
 class DatabaseSyncService(BaseService):

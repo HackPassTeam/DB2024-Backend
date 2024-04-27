@@ -4,15 +4,13 @@ from fastapi import Depends, status
 from fastapi.exceptions import HTTPException
 from fastapi.security import SecurityScopes
 
-from messier.infrastructure.security.scopes import AccessScopeEnum
-from messier.domain.core import exceptions
 from messier.application.authorize import (
     AuthorizeDTO, AuthorizeResponseDTO
 )
-from messier.application.common.dto import AccountDTO, PersonDTO
-
+from messier.application.common.dto import AccountDTO
+from messier.domain.core import exceptions
+from messier.infrastructure.security.scopes import AccessScopeEnum
 from messier.presentation.api.auth import oauth2_scheme
-
 from .ioc import CoreIoCDep
 
 

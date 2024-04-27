@@ -1,19 +1,7 @@
-from typing import Literal
-
 from messier.domain.core.adapters import AllPersonsAchievements
-from messier.domain.core.adapters.notification_destination import \
-    AllNotificationDestinations
-from messier.domain.core.adapters.person import AllPersons
-from messier.domain.core.services.notification import NotificationService
-from messier.infrastructure.security.scopes import AccessScopeEnum
-from messier.domain.core.exceptions.notification import (
-    PersonHasNoNotificationDestinations,
-    NotificationError,
-    CantReportInternalError
-)
 from messier.domain.core.models.person.achievement import Achievement
 from messier.domain.core.models.person.person import Person
-
+from messier.domain.core.services.notification import NotificationService
 from messier.infrastructure.bases.service import BaseService
 
 

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from typing import Callable, Generic, TypeVar, Any
 from abc import ABC
+from typing import Callable, Generic, TypeVar, Any
 
 
 class BaseEvent:
