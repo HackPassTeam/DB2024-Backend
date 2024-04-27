@@ -5,6 +5,7 @@ from messier.domain.core.models.education.educational_material import Educationa
 
 class EducationalMaterialAdmin(ModelView, model=EducationalMaterial):
     column_list = [
+        EducationalMaterial.id,
         EducationalMaterial.name,
         EducationalMaterial.description,
         EducationalMaterial.tags,

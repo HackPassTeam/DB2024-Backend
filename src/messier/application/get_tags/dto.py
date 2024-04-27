@@ -1,7 +1,6 @@
-from dataclasses import dataclass, field
-from typing import Optional
+from dataclasses import dataclass
 
-from messier.application.common.dto import EducationalMaterialDTO, TagDTO
+from messier.application.common.dto import TagDTO
 
 
 @dataclass

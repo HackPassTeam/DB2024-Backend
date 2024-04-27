@@ -6,6 +6,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, AsyncAttrs
 from sqlalchemy.orm import DeclarativeBase, mapped_column
 
 from messier.infrastructure.config import environment
+from messier.infrastructure.relational_entity import BaseRelationalObject, RelationalMapper
 
 
 def _create_engine(driver: str, is_async: bool):
@@ -65,13 +66,9 @@ class DatabaseSession(AsyncSession, Injectable, call=inject_database_session, sc
     pass
 
 
-class RelationalMapper(DeclarativeBase, AsyncAttrs):
-    pass
-
-
 async def on_startup():
     async with engine.begin() as session:
-        # await session.run_sync(Base.metadata.drop_all)
+        # await session.run_sync(BaseRelationalObject.metadata.drop_all)
         await session.run_sync(RelationalMapper.metadata.create_all)
 
 

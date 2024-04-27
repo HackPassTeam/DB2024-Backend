@@ -1,9 +1,6 @@
-from messier.application.common.dto import EducationalMaterialDTO, TagDTO
-from messier.application.get_education_materials.dto import GetEducationalMaterialsResponseDTO, \
-    GetEducationalMaterialsDTO
+from messier.application.common.dto import TagDTO
 from messier.application.get_tags.dto import GetTagsResponseDTO
 from messier.domain.core.adapters.tag import AllTag
-from messier.domain.core.services.educational_material import EducationalMaterialService
 from messier.infrastructure.use_case import UseCase
 
 

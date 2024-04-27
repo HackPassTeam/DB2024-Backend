@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional
 from uuid import UUID
@@ -12,6 +13,7 @@ from messier.domain.core.models import (
 )
 from messier.domain.core.models.education.educational_material import EducationalMaterial
 from messier.domain.core.models.education.tag import Tag
+from messier.domain.core.models.education.theory import Theory
 from messier.domain.core.models.person.account import Account
 from messier.domain.core.models.person.person import Person, PersonId
 from messier.domain.telegram.models import (
@@ -133,7 +135,7 @@ class NotificationDestinationDTO(BaseModel):
 class TagDTO(BaseModel):
     id: int
     name: str
-    color: int
+    color: str
     created_at: datetime
 
     @classmethod
@@ -171,4 +173,33 @@ class EducationalMaterialDTO(BaseModel):
             description=model.description,
             created_at=model.created_at,
             tags=tags
+        )
+
+
+@dataclass
+class TheoryDTO:
+    id: int
+    title: str
+
+    @classmethod
+    async def from_model(
+            cls,
+            model: Theory
+    ) -> TheoryDTO:
+        return TheoryDTO(
+            id=model.id,
+            title=model.title
+        )
+
+
+@dataclass
+class ShortTheoryDTO:
+    id: int
+    title: str
+
+    @classmethod
+    def from_model(cls, theory: tuple[int, str]):
+        return cls(
+            id=theory[0],
+            title=theory[1]
         )

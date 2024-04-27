@@ -1,6 +1,6 @@
 from messier.application.common.dto import EducationalMaterialDTO
-from messier.application.get_education_materials.dto import GetEducationalMaterialsResponseDTO, \
-    GetEducationalMaterialsDTO
+from messier.application.education.get_education_materials.dto import GetEducationalMaterialsDTO, \
+    GetEducationalMaterialsResponseDTO
 from messier.domain.core.services.educational_material import EducationalMaterialService
 from messier.infrastructure.use_case import UseCase
 
@@ -10,6 +10,7 @@ class EducationalMaterialDTOself:
 
 
 class GetEducationalMaterialsUseCase(UseCase[GetEducationalMaterialsDTO, GetEducationalMaterialsResponseDTO]):
+
     # noinspection PyProtocol
     def __init__(
             self,

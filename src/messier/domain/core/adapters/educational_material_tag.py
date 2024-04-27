@@ -1,6 +1,6 @@
 from typing import Optional
 
-from sqlalchemy import select, or_, and_, any_
+from sqlalchemy import select, or_
 
 from messier.domain.core.models.education.educational_material import EducationalMaterial
 from messier.domain.core.models.education.educational_material_tag import EducationalMaterialTag
@@ -29,21 +29,20 @@ class AllEducationalMaterialTag(BaseEntityRepo[EducationalMaterialTag]):
             offset: int,
             text: Optional[str] = None
     ):
+        print(limit, offset, tags, text)
         stmt = (
             select(EducationalMaterial)
-            .where(Tag.id.in_(tags))
             .limit(limit)
             .offset(offset)
         )
 
+        if tags:
+            stmt = stmt.join(EducationalMaterial.tags).where(Tag.id.in_(tags))
+
         if text:
-            stmt.where(
-                and_(
-                    or_(
-                        EducationalMaterial.name.contains(text),
-                        EducationalMaterial.name.contains(text)
-                    )
-                )
+            stmt = stmt.where(or_(
+                EducationalMaterial.name.ilike(f'%{text}%'),
+                EducationalMaterial.description.ilike(f'%{text}%'))
             )
 
         res = await self.session.scalars(stmt)

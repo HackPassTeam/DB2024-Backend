@@ -1,9 +1,13 @@
 from typing import TYPE_CHECKING
 
-from sqlalchemy.orm import Mapped
+from sqlalchemy.ext.asyncio import AsyncAttrs
+from sqlalchemy.orm import Mapped, DeclarativeBase
 
-from messier.infrastructure.database import RelationalMapper
 from messier.infrastructure.entity import BaseEntity
+
+
+class RelationalMapper(DeclarativeBase, AsyncAttrs):
+    pass
 
 
 class BaseRelationalObject(BaseEntity, RelationalMapper):
