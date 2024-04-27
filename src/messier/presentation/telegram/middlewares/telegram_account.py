@@ -3,9 +3,8 @@ from typing import Callable, Dict, Any, Awaitable
 from aiogram import BaseMiddleware
 from aiogram.types import TelegramObject, User
 
-from messier.application.merge_telegram_account import MergeTelegramAccountDTO, MergeTelegramAccountResponseDTO
+from messier.application.merge_telegram_account import MergeTelegramAccountDTO
 from messier.presentation.interactor_factory.telegram import TelegramInteractorFactory
-from messier.presentation.telegram.errors.auth import AccountNotIdentifiedError
 
 
 class TelegramAccountMiddleware(BaseMiddleware):

@@ -2,8 +2,8 @@ from typing import Optional
 
 from sqlalchemy import select, func, delete
 
-from messier.domain.core.models.person.person import Person
 from messier.domain.core.models.person.account import Account
+from messier.domain.core.models.person.person import Person
 from messier.infrastructure.repo import BaseEntityRepo
 
 

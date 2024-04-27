@@ -1,9 +1,9 @@
 from typing import Annotated
-from di.dependent import Injectable
 
+from di.dependent import Injectable
 from sqlalchemy import create_engine, BigInteger
-from sqlalchemy.orm import DeclarativeBase, mapped_column
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, AsyncAttrs
+from sqlalchemy.orm import DeclarativeBase, mapped_column
 
 from messier.infrastructure.config import environment
 

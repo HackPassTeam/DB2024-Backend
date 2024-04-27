@@ -1,6 +1,5 @@
-from typing import Any, Iterable
-
 from enum import Enum
+from typing import Any, Iterable
 
 from .backends.base import NotifierBackend
 

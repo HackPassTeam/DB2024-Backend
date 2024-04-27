@@ -2,8 +2,8 @@ from typing import TYPE_CHECKING
 
 from sqlalchemy.orm import Mapped
 
-from messier.infrastructure.entity import BaseEntity
 from messier.infrastructure.database import RelationalMapper
+from messier.infrastructure.entity import BaseEntity
 
 
 class BaseRelationalObject(BaseEntity, RelationalMapper):

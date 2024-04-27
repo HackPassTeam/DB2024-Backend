@@ -1,9 +1,8 @@
 from datetime import datetime
 
 from sqlalchemy import ForeignKey, Boolean, VARCHAR
-from sqlalchemy.orm import mapped_column, Mapped, relationship
+from sqlalchemy.orm import mapped_column, Mapped
 
-from messier.domain.core.models.education.theory import Theory
 from messier.infrastructure.relational_entity import BaseRelationalEntity
 
 
@@ -15,3 +14,4 @@ class Lesson(BaseRelationalEntity):
     course_id: Mapped[int] = mapped_column(ForeignKey("course.id"))
     finished: Mapped[bool] = mapped_column(Boolean(), default=False)
     start_date: Mapped[datetime] = mapped_column(default=datetime.now)
+    end_date: Mapped[datetime | None] = mapped_column(default=None)

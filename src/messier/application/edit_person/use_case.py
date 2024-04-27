@@ -1,7 +1,6 @@
 from messier.domain.core.services import AuthenticationService
 
 from messier.infrastructure.bases.use_case import UseCase
-from messier.infrastructure.security.token import create_access_token, CreateTokenData, Sub
 
 from .dto import EditPersonDTO, EditPersonResponseDTO
 from ..common.dto import PersonDTO

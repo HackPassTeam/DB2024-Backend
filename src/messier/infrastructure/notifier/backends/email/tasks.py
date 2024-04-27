@@ -4,9 +4,8 @@ from email.message import EmailMessage
 
 from celery import shared_task
 
-from messier.infrastructure.dto import BaseDTO
-
 from messier.infrastructure.config import environment
+from messier.infrastructure.dto import BaseDTO
 
 logger = logging.getLogger(__name__)
 
@@ -20,7 +19,7 @@ def _execute(
         content: EmailNotificationContentDTO,
 ):
     msg = EmailMessage()
-    msg['Subject'] = "Код подтверждения Random Coffee"
+    msg['Subject'] = "Код подтверждения Messier 43"
     msg['From'] = environment.email_address
     msg['To'] = destination_email_address
     msg.set_content(content.text)

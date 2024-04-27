@@ -2,7 +2,6 @@ from typing import Generic, TypeVar
 
 from di.dependent import Injectable
 
-
 PayloadType = TypeVar("PayloadType")
 ResponseType = TypeVar("ResponseType")
 

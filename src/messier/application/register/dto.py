@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+
 from pydantic import EmailStr
 
 from messier.application.common.dto import AccountDTO

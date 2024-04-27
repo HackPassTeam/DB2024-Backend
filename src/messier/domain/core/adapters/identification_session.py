@@ -1,11 +1,13 @@
-from typing import Optional, Iterable
-
 from sqlalchemy import select, update
 
 from messier.domain.core.models.identification_session import \
     IdentificationSession, IdentificationSessionStatusEnum
-from messier.infrastructure.bases.db_gateway import BaseDbGateway
-from messier.infrastructure.repo import BaseRepo, BaseEntityRepo
+from messier.infrastructure.repo import BaseEntityRepo
+from sqlalchemy import select, update
+
+from messier.domain.core.models.identification_session import \
+    IdentificationSession, IdentificationSessionStatusEnum
+from messier.infrastructure.repo import BaseEntityRepo
 
 
 class AllIdentificationSessions(BaseEntityRepo[IdentificationSession]):

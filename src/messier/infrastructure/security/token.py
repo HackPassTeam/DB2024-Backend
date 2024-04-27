@@ -1,6 +1,5 @@
-from typing import Optional, Union, AbstractSet
-
 from datetime import timedelta, datetime
+from typing import Optional, Union, AbstractSet
 
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -8,7 +7,6 @@ from pydantic import BaseModel, root_validator, ValidationError, validator
 
 from messier.infrastructure.config import environment
 from messier.infrastructure.security.scopes import AccessScopeEnum
-
 
 ALGORITHM = "HS256"
 

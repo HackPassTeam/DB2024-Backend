@@ -1,23 +1,23 @@
 from __future__ import annotations
 
-from typing import Optional
 from datetime import datetime
+from typing import Optional
 from uuid import UUID
 
 from pydantic import BaseModel
-
-from messier.infrastructure.notifier.interface import NotifierBackendEnum
-from messier.domain.core.models.person.person import Person, PersonId
-from messier.domain.core.models.person.account import Account
 
 from messier.domain.core.models import (
     UTM,
     NotificationDestination,
 )
-
+from messier.domain.core.models.education.educational_material import EducationalMaterial
+from messier.domain.core.models.education.tag import Tag
+from messier.domain.core.models.person.account import Account
+from messier.domain.core.models.person.person import Person, PersonId
 from messier.domain.telegram.models import (
     TelegramAccount as TelegramAccount,
 )
+from messier.infrastructure.notifier.interface import NotifierBackendEnum
 
 BOT_URL = "http://t.me/coffee137_bot"
 
@@ -127,4 +127,48 @@ class NotificationDestinationDTO(BaseModel):
             notifier_backend=model.notifier_backend,
             internal_identifier=model.internal_identifier,
             priority=model.priority,
+        )
+
+
+class TagDTO(BaseModel):
+    id: int
+    name: str
+    color: int
+    created_at: datetime
+
+    @classmethod
+    async def from_model(
+            cls,
+            model: Tag
+    ) -> TagDTO:
+        return TagDTO(
+            id=model.id,
+            name=model.name,
+            color=model.color,
+            created_at=model.created_at
+        )
+
+
+class EducationalMaterialDTO(BaseModel):
+    id: int
+    name: str
+    description: str
+    created_at: datetime
+    tags: list[TagDTO]
+
+    @classmethod
+    async def from_model(
+            cls,
+            model: EducationalMaterial
+    ) -> EducationalMaterialDTO:
+        tags = []
+        for tag in model.tags:
+            tag_dto = await TagDTO.from_model(tag)
+            tags.append(tag_dto)
+        return EducationalMaterialDTO(
+            id=model.id,
+            name=model.name,
+            description=model.description,
+            created_at=model.created_at,
+            tags=tags
         )

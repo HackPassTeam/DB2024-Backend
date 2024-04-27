@@ -1,20 +1,15 @@
 import locale
-from datetime import datetime, timedelta
 
 import uvicorn
-
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
 from sqladmin import Admin
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from messier.infrastructure.database import engine, on_startup
-
-from messier.presentation.api.routers import v1
-from messier.presentation.api.admin import include_admin_views, auth_backend
 
 from messier.infrastructure.config import environment
-from messier.presentation.interactor_factory import CoreInteractorFactory
+from messier.infrastructure.database import engine, on_startup
+from messier.presentation.api.admin import include_admin_views, auth_backend
+from messier.presentation.api.routers import v1
 
 app = FastAPI(title="RKSI API")
 
@@ -29,10 +24,11 @@ include_admin_views(admin_app)
 
 
 origins = [
-    "http://localhost",
-    "http://localhost:3000",
-    "https://localhost",
-    "https://localhost:3000",
+    "*"
+    # "http://localhost",
+    # "http://localhost:3000",
+    # "https://localhost",
+    # "https://localhost:3000",
 ]
 
 if environment.allowed_origin:

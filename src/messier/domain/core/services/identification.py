@@ -1,26 +1,12 @@
-from messier.domain.core.adapters.identification_session import (
-    AllIdentificationSessions,
-)
-from messier.domain.core.adapters.person import AllPersons
+from messier.domain.core.adapters import AllPersons
+from messier.domain.core.adapters.identification_session import AllIdentificationSessions
+from messier.domain.core.exceptions.identification import IdentificationConfirmationNotVerified
+from messier.domain.core.models import Account, IdentificationSession
+from messier.domain.core.models.identification_session import IdentificationSessionStatusEnum
 from messier.domain.core.models.person.person import Person
-from messier.domain.core.models.person.account import Account
-from messier.infrastructure.security.confirmation_code import (
-    generate_confirmation_code,
-    get_confirmation_code_hash,
-    verify_confirmation_code,
-)
-from messier.domain.core.exceptions.identification import (
-    UnknownEmailDomainError,
-    IdentificationConfirmationNotVerified,
-)
-from messier.domain.core.services.access import AccessService
-from messier.domain.core.models.identification_session import (
-    IdentificationSession,
-    IdentificationSessionStatusEnum,
-)
-from messier.domain.core import models
-
-from messier.infrastructure.bases.service import BaseService
+from messier.domain.core.services import AccessService
+from messier.infrastructure.security.confirmation_code import get_confirmation_code_hash, verify_confirmation_code
+from messier.infrastructure.service import BaseService
 
 
 class IdentificationService(BaseService):
@@ -73,10 +59,6 @@ class IdentificationService(BaseService):
                 person = await self.all_persons.with_id(i.person_id)
                 person.account_id = account.id
                 await self.all_persons.save(person)
-                await self.organisation_service.create_employee(
-                    person=person,
-                    organisation_id=i.organisation_id,
-                )
                 return person
         else:
             raise IdentificationConfirmationNotVerified()

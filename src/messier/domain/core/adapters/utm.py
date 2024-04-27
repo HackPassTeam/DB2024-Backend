@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from messier.infrastructure.repo import BaseEntityRepo
 from messier.domain.core.models import UTM
+from messier.infrastructure.repo import BaseEntityRepo
 
 
 class AllUTMs(BaseEntityRepo[UTM]):

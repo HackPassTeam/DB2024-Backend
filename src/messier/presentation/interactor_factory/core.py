@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from messier import application
+from messier.application.get_education_materials.use_case import GetEducationalMaterialsUseCase
+from messier.application.get_tags.use_case import GetTagsUseCase
 from messier.infrastructure.bases.interactor_factory import (
     BaseInteractorFactory,
     use_case_wrapper,
@@ -67,4 +69,16 @@ class CoreInteractorFactory(BaseInteractorFactory):
     async def get_my_achievements(
             self: CoreInteractorFactory, use_case: application.get_my_achievements.GetMyAchievements,
     ) -> WiredUseCase[application.get_my_achievements.GetMyAchievements]:
+        yield use_case
+
+    @use_case_wrapper[GetEducationalMaterialsUseCase]()
+    async def get_educational_materials(
+            self: CoreInteractorFactory, use_case: GetEducationalMaterialsUseCase,
+    ) -> WiredUseCase[GetEducationalMaterialsUseCase]:
+        yield use_case
+
+    @use_case_wrapper[GetTagsUseCase]()
+    async def get_tags(
+            self: CoreInteractorFactory, use_case: GetTagsUseCase,
+    ) -> WiredUseCase[GetTagsUseCase]:
         yield use_case

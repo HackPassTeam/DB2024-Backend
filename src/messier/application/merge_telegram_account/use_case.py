@@ -1,8 +1,7 @@
-from messier.domain.telegram.services import DatabaseSyncService
-from messier.infrastructure.bases.use_case import UseCase
-
 from messier.application.common.dto import TelegramAccountDTO
 from messier.application.merge_telegram_account.dto import MergeTelegramAccountDTO, MergeTelegramAccountResponseDTO
+from messier.domain.telegram.services import DatabaseSyncService
+from messier.infrastructure.bases.use_case import UseCase
 
 
 class MergeTelegramAccount(UseCase[MergeTelegramAccountDTO, MergeTelegramAccountResponseDTO]):

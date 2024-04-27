@@ -1,19 +1,17 @@
-from messier.domain.core.services import AuthenticationService
-from messier.infrastructure.bases.use_case import UseCase
-
+from messier.application.attach_person_to_telegram_account.dto import (
+    AttachPersonToTelegramAccountDTO, AttachPersonToTelegramAccountResponseDTO
+)
 from messier.domain.core.adapters import (
     AllPersons, AllAccounts,
 )
+from messier.domain.core.services import AuthenticationService
 from messier.domain.telegram.repos.accounts import (
     AllAccounts as AllTelegramAccounts,
 )
 from messier.domain.telegram.services import (
     DatabaseSyncService,
 )
-
-from messier.application.attach_person_to_telegram_account.dto import (
-    AttachPersonToTelegramAccountDTO, AttachPersonToTelegramAccountResponseDTO
-)
+from messier.infrastructure.bases.use_case import UseCase
 from messier.infrastructure.security.token import CreateTokenData, \
     create_access_token, Sub
 

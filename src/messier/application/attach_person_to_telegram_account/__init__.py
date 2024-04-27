@@ -1,2 +1,2 @@
-from .use_case import AttachPersonToTelegramAccount
 from .dto import AttachPersonToTelegramAccountDTO, AttachPersonToTelegramAccountResponseDTO
+from .use_case import AttachPersonToTelegramAccount

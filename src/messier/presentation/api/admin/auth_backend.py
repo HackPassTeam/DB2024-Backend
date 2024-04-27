@@ -1,9 +1,8 @@
 import secrets
 
+from sqladmin.authentication import AuthenticationBackend
 from starlette.requests import Request
 from starlette.responses import Response
-
-from sqladmin.authentication import AuthenticationBackend
 
 from messier.infrastructure.config import environment
 

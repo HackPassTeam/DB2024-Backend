@@ -1,11 +1,8 @@
-from messier.infrastructure.bases.use_case import UseCase
-
+from messier.application.common.dto import AccountDTO
 from messier.domain.core.services import (
     AuthenticationService,
-    IdentificationService, AuthorizationService, AccessService,
-)
-from messier.application.common.dto import AccountDTO
-
+    IdentificationService, )
+from messier.infrastructure.bases.use_case import UseCase
 from .dto import RegisterDTO, RegisterResponseDTO
 from ...domain.core.adapters.person import AllPersons
 
@@ -23,6 +20,7 @@ class Register(UseCase[RegisterDTO, RegisterResponseDTO]):
         self.identification_service = identification_service
 
     async def __call__(self, payload: RegisterDTO) -> RegisterResponseDTO:
+        print(payload)
 
         person = await self.identification_service.create_person(
             full_name=payload.full_name,

@@ -1,10 +1,8 @@
-from typing import Callable, Dict, Any, Awaitable
-
 import re
+from typing import Callable, Dict, Any, Awaitable
 
 from aiogram import BaseMiddleware
 from aiogram.types import TelegramObject, Message
-from aiogram.utils import deep_linking
 
 
 class StartPayloadOuterMiddleware(BaseMiddleware):

@@ -1,14 +1,14 @@
 from typing import Iterable, Any
+
 from celery import Celery
-from ..base import NotifierBackend
 
 from .tasks import send_email_task, EmailNotificationContentDTO
-
+from ..base import NotifierBackend
 
 app = Celery()
 
 
-app.config_from_object("random_coffee.celeryconfig")
+app.config_from_object("messier.celeryconfig")
 
 
 class EmailNotifierBackend(NotifierBackend):

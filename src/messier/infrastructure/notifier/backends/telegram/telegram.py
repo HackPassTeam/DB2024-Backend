@@ -1,9 +1,7 @@
 from typing import Iterable, Any
 
-
-from ..base import NotifierBackend
-
 from .tasks import send_telegram_message_task, broadcast_telegram_message_task, TelegramNotificationContentDTO
+from ..base import NotifierBackend
 
 
 class TelegramNotifierBackend(NotifierBackend):

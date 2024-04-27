@@ -2,7 +2,6 @@ import random
 
 from passlib.context import CryptContext
 
-
 ALGORITHM = "HS256"
 
 

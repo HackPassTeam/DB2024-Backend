@@ -1,20 +1,16 @@
 from __future__ import annotations
 
-from typing import Optional, Union, TYPE_CHECKING
-from typing_extensions import TypeAlias
-
-from dataclasses import dataclass
 from datetime import datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy import ForeignKey
-from sqlalchemy.orm import mapped_column, Mapped, relationship
+from sqlalchemy.orm import mapped_column, Mapped
 
 from messier.infrastructure.models import BuiltinSubtypeMixin
 from messier.infrastructure.relational_entity import BaseRelationalEntity
 
-
 if TYPE_CHECKING:
-    from messier.domain.core.models import Account
+    pass
 
 
 class PersonId(int, BuiltinSubtypeMixin):
