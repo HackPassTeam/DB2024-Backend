@@ -19,10 +19,14 @@ class AllTag(BaseEntityRepo[Tag]):
 
     async def get_all(
             self,
+            text: str
     ):
         stmt = (
             select(Tag)
             .order_by(Tag.name)
         )
+
+        if text:
+            stmt = stmt.where(Tag.name.ilike(f"%{text}%"))
 
         return await self.session.scalars(stmt)

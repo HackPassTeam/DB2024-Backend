@@ -1,5 +1,4 @@
 from messier.application.common.dto import TheoryDTO
-from messier.application.education.get_theories.dto import GetTheoriesDTO, GetTheoriesResponseDTO
 from messier.application.education.get_theory.dto import GetTheoryDTO
 from messier.domain.core.adapters.theory import AllTheory
 from messier.infrastructure.use_case import UseCase

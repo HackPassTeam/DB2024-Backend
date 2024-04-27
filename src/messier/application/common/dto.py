@@ -180,6 +180,7 @@ class EducationalMaterialDTO(BaseModel):
 class TheoryDTO:
     id: int
     title: str
+    content: str
 
     @classmethod
     async def from_model(
@@ -188,7 +189,8 @@ class TheoryDTO:
     ) -> TheoryDTO:
         return TheoryDTO(
             id=model.id,
-            title=model.title
+            title=model.title,
+            content=model.content
         )
 
 
