@@ -1,20 +1,15 @@
-from typing import Annotated, Union
+from typing import Annotated
 
 from fastapi import APIRouter, Depends
-
-from messier.domain.core import models
 
 from messier.application.confirm_identification import (
     ConfirmIdentificationDTO,
     ConfirmIdentificationResponseDTO,
 )
-from messier.domain.core.exceptions.identification import \
-    UnknownEmailDomainError
-
+from messier.domain.core import models
 from messier.infrastructure.dto import BaseDTO
 from messier.presentation.api import dependencies
 from messier.presentation.api.dependencies.ioc import CoreIoCDep
-from messier.presentation.api.schemas.v1.common import err_responses
 
 router = APIRouter(tags=["Me", "Identification"])
 

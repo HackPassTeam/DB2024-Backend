@@ -1,2 +1,2 @@
-from .use_case import UpsertTelegramEntities
 from .dto import UpsertTelegramEntitiesDTO, UpsertTelegramEntitiesResponseDTO
+from .use_case import UpsertTelegramEntities

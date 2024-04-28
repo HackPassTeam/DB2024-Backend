@@ -2,10 +2,10 @@ from typing import Callable, Dict, Any, Awaitable
 
 from aiogram import BaseMiddleware
 from aiogram.types import TelegramObject
-
 from messier.presentation.interactor_factory.legacy import LegacyInteractorFactory
-from messier.presentation.interactor_factory.telegram import TelegramInteractorFactory
+
 from messier.presentation.interactor_factory.core import CoreInteractorFactory
+from messier.presentation.interactor_factory.telegram import TelegramInteractorFactory
 
 
 class IoCInjectionMiddleware(BaseMiddleware):

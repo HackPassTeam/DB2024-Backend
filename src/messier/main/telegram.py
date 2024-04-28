@@ -1,10 +1,10 @@
 import asyncio
 
-from redis.asyncio import Redis
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.redis import (
     RedisStorage, RedisEventIsolation, DefaultKeyBuilder
 )
+from redis.asyncio import Redis
 
 from messier.infrastructure.config import environment
 from messier.presentation.telegram import routers, middlewares, error_handlers

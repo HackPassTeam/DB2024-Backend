@@ -1,9 +1,7 @@
 from dataclasses import dataclass
 
 import aiogram.types
-from pydantic import EmailStr
 
-from messier.application.common.dto import AccountDTO
 from messier.infrastructure.dto import BaseDTO
 
 

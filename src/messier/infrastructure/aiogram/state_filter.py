@@ -1,7 +1,7 @@
 from typing import ClassVar, Union, Dict, Any, Optional
 
-from aiogram.types import TelegramObject
 from aiogram.filters.state import StateFilter as _StateFilter
+from aiogram.types import TelegramObject
 
 
 class BaseStateFilter(_StateFilter):

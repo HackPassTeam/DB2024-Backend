@@ -1,9 +1,9 @@
 from typing import Iterable
 
-from sqlalchemy import update, select
+from sqlalchemy import update
 
-from messier.infrastructure.repo import BaseEntityRepo
 from messier.domain.telegram.models import TelegramAccount
+from messier.infrastructure.repo import BaseEntityRepo
 
 
 class AllAccounts(BaseEntityRepo[TelegramAccount]):

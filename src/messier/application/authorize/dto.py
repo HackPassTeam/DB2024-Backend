@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from messier.infrastructure.security.scopes import AccessScopeEnum
 from messier.application.common.dto import AccountDTO
+from messier.infrastructure.security.scopes import AccessScopeEnum
 
 
 @dataclass

@@ -3,6 +3,7 @@ from datetime import datetime
 from sqlalchemy import VARCHAR
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
+from messier.domain.core.models.education.educational_material_tag import EducationalMaterialTag
 from messier.domain.core.models.education.tag import Tag
 from messier.infrastructure.relational_entity import BaseRelationalEntity
 
@@ -15,4 +16,4 @@ class EducationalMaterial(BaseRelationalEntity):
     description: Mapped[str] = mapped_column(VARCHAR(256))
     created_at: Mapped[datetime] = mapped_column(default=datetime.now)
 
-    tags: Mapped[Tag] = relationship(lazy='selectin')
+    tags: Mapped[list[Tag]] = relationship(lazy='selectin', secondary=EducationalMaterialTag.__table__)

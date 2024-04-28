@@ -1,6 +1,5 @@
-from typing import Protocol, runtime_checkable, TYPE_CHECKING, Any
-
 from datetime import datetime
+from typing import TYPE_CHECKING, Any
 
 from pydantic import GetCoreSchemaHandler
 from pydantic.json_schema import CoreSchema, core_schema

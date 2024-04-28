@@ -1,7 +1,7 @@
 from sqlalchemy import select
 
-from messier.infrastructure.repo import BaseEntityRepo
 from messier.domain.telegram.models import ChatMember
+from messier.infrastructure.repo import BaseEntityRepo
 
 
 class AllChatMembers(BaseEntityRepo[ChatMember]):

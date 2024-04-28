@@ -1,12 +1,10 @@
-from messier.infrastructure.bases.use_case import UseCase
-
-from messier.domain.core.services import (
-    UTMService,
-)
 from messier.application.common.dto import (
     UTMDTO,
 )
-
+from messier.domain.core.services import (
+    UTMService,
+)
+from messier.infrastructure.bases.use_case import UseCase
 from .dto import ReadUTMDTO, ReadUTMResponseDTO
 
 

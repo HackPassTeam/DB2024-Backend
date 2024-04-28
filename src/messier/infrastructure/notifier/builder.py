@@ -1,11 +1,9 @@
 from messier.infrastructure.config import Environment
-
-from .interface import Notifier
-
 from .backends import (
     TelegramNotifierBackend,
     EmailNotifierBackend,
 )
+from .interface import Notifier
 
 
 def build_notifier(environment: Environment) -> Notifier:

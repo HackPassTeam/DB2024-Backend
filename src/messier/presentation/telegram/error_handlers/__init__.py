@@ -4,7 +4,6 @@ from . import (
     auth,
 )
 
-
 router = Router()
 
 

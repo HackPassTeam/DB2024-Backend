@@ -8,7 +8,6 @@ from messier.application.write_utm import (
 )
 from messier.presentation.api.dependencies.ioc import CoreIoCDep
 
-
 router = APIRouter(tags=["UTM"])
 
 

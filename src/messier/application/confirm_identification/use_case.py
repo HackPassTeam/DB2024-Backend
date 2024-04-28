@@ -1,21 +1,14 @@
+from messier.application.common.dto import PersonDTO
 from messier.application.confirm_identification.dto import (
     ConfirmIdentificationDTO,
     ConfirmIdentificationResponseDTO,
 )
-from messier.domain.core.exceptions.authorization import (
-    InvalidCredentialsError,
-)
 from messier.domain.core.adapters import AllAccounts
-from messier.infrastructure.security.token import decode_access_token, \
-    InvalidCredentialsError as SubdomainInvalidCredentialsError
-from messier.infrastructure.bases.use_case import UseCase
-
 from messier.domain.core.services import (
     AuthorizationService, AuthenticationService,
     IdentificationService,
 )
-
-from messier.application.common.dto import PersonDTO
+from messier.infrastructure.bases.use_case import UseCase
 
 
 class ConfirmIdentification(

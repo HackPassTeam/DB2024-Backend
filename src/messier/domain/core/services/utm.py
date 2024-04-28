@@ -1,12 +1,9 @@
+import datetime
 from typing import Optional
 from uuid import UUID
-import datetime
-
-
-from messier.domain.core.models import UTM
 
 from messier.domain.core import exceptions, adapters
-
+from messier.domain.core.models import UTM
 from messier.infrastructure.service import BaseService
 
 

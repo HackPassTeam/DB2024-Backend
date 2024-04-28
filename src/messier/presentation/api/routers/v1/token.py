@@ -1,15 +1,13 @@
-from typing_extensions import Annotated
-
 from fastapi import APIRouter, Depends
 from fastapi.exceptions import HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
+from typing_extensions import Annotated
 
-from messier.domain.core import exceptions
 from messier.application.login import (
     LoginDTO,
 )
+from messier.domain.core import exceptions
 from messier.presentation.api.dependencies.ioc import CoreIoCDep
-
 from messier.presentation.api.schemas.v1 import token as schemas
 
 router = APIRouter(tags=["Auth"])
